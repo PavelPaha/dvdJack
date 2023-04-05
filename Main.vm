@@ -1,15 +1,11 @@
 function Main.main 1
 push local 0
-push constant 102
-push constant 31
-push constant 1
-push constant 1
-call Dvd.new 5
+call Dvd.new 1
 pop local 0
 push local 0
-push constant 123
-push constant 36
-call Dvd.move 3
+push constant 160
+push constant 100
+call Dvd.Play 3
 pop temp 0
 push constant 0
 return

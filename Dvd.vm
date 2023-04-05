@@ -1,34 +1,30 @@
 function Dvd.new 0
-push constant 1
+push constant 8
 call Memory.alloc 1
 pop pointer 0
-push constant 420
-call Array.new 1
+push constant 102
 pop this 0
+push constant 31
+pop this 1
+push constant 0
+pop this 2
+push constant 0
+pop this 3
+push constant 0
+pop this 4
+push constant 10
+pop this 5
+push constant 10
+pop this 6
+push constant 5
+pop this 7
 push pointer 0
 return
-function Dvd.mod 1
-push argument 0
-pop pointer 0
-push argument 1
-push argument 2
-call Math.divide 2
-pop local 0
-push argument 1
-push argument 2
-push local 0
-call Math.multiply 2
-sub
-return
-function Dvd.print 3
+function Dvd.print 1
 push argument 0
 pop pointer 0
 push constant 0
-pop local 2
-push constant 0
 pop local 0
-push constant 0
-pop local 1
 push argument 1
 push constant 0
 add
@@ -395,28 +391,14 @@ call Screen.drawLine 4
 pop temp 0
 label WHILE_EXP0
 push local 0
-push constant 10
+push constant 10000
 lt
 not
 if-goto WHILE_END0
-label WHILE_EXP1
-push local 1
-push constant 1000
-lt
-not
-if-goto WHILE_END1
-push local 1
-push constant 1
-add
-pop local 1
-goto WHILE_EXP1
-label WHILE_END1
 push local 0
 push constant 1
 add
 pop local 0
-push constant 0
-pop local 1
 goto WHILE_EXP0
 label WHILE_END0
 push constant 0
@@ -432,154 +414,92 @@ call Screen.drawRectangle 4
 pop temp 0
 push constant 0
 return
-function Dvd.move 8
+function Dvd.Play 2
 push argument 0
 pop pointer 0
-push constant 102
-pop local 0
-push constant 31
-pop local 1
-push constant 10
-pop local 2
-push constant 10
-neg
-pop local 3
+push argument 1
+pop this 3
+push argument 2
+pop this 4
 label WHILE_EXP0
-push local 5
-push local 6
+push local 0
+push local 1
 and
 not
 not
 if-goto WHILE_END0
 push constant 0
-pop local 5
+pop local 0
 push constant 0
-pop local 6
-call Keyboard.keyPressed 0
-pop local 4
-push local 4
-push constant 49
-eq
-if-goto IF_TRUE0
-goto IF_FALSE0
-label IF_TRUE0
-push local 2
-push constant 1
+pop local 1
+push pointer 0
+call Dvd.Move 1
+pop temp 0
+push this 3
+push this 0
 add
-pop local 2
-push local 3
-push constant 1
-add
-pop local 3
-label IF_FALSE0
-push local 4
-push constant 50
-eq
-if-goto IF_TRUE1
-goto IF_FALSE1
-label IF_TRUE1
-push local 2
-push constant 1
-sub
-pop local 2
-push local 3
-push constant 1
-sub
-pop local 3
-label IF_FALSE1
-push argument 1
-push local 2
-add
-pop argument 1
-push argument 2
-push local 3
-add
-pop argument 2
-push argument 1
-push local 0
-add
-push local 2
+push this 5
 add
 push constant 511
 gt
-push argument 1
-push local 2
+push this 3
+push this 5
 add
 push constant 1
 lt
 or
-if-goto IF_TRUE2
-goto IF_FALSE2
-label IF_TRUE2
-push local 2
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 5
 push constant 1
 neg
 call Math.multiply 2
-pop local 2
+pop this 5
 push constant 0
 not
-pop local 5
-label IF_FALSE2
-push argument 2
-push local 1
+pop local 0
+label IF_FALSE0
+push this 4
+push this 1
 add
-push local 3
+push this 6
 add
 push constant 255
 gt
-push argument 2
-push local 3
+push this 4
+push this 6
 add
 push constant 1
 lt
 or
-if-goto IF_TRUE3
-goto IF_FALSE3
-label IF_TRUE3
-push local 3
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 6
 push constant 1
 neg
 call Math.multiply 2
-pop local 3
+pop this 6
 push constant 0
 not
-pop local 6
-label IF_FALSE3
-push local 5
-push local 6
-or
-if-goto IF_TRUE4
-goto IF_FALSE4
-label IF_TRUE4
-push local 7
-if-goto IF_TRUE5
-goto IF_FALSE5
-label IF_TRUE5
-push constant 0
-pop local 7
-goto IF_END5
-label IF_FALSE5
-push constant 0
-not
-pop local 7
-label IF_END5
-push local 7
-call Screen.setColor 1
-pop temp 0
+pop local 1
+label IF_FALSE1
 push pointer 0
-call Dvd.FillScreen 1
+push local 0
+push local 1
+call Dvd.ChangeState 3
 pop temp 0
-label IF_FALSE4
-push local 7
+push this 2
 not
 call Screen.setColor 1
 pop temp 0
 push pointer 0
-push argument 1
-push argument 2
+push this 3
+push this 4
 call Dvd.print 3
 pop temp 0
-push local 7
+push this 2
 call Screen.setColor 1
 pop temp 0
 push pointer 0
@@ -587,5 +507,158 @@ call Dvd.FillScreen 1
 pop temp 0
 goto WHILE_EXP0
 label WHILE_END0
+push pointer 0
+call Dvd.EpicFinish 1
+pop temp 0
+push constant 0
+return
+function Dvd.Move 1
+push argument 0
+pop pointer 0
+call Keyboard.keyPressed 0
+pop local 0
+push local 0
+push constant 49
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 5
+push constant 0
+lt
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push this 5
+push this 7
+sub
+pop this 5
+goto IF_END1
+label IF_FALSE1
+push this 5
+push this 7
+add
+pop this 5
+label IF_END1
+push this 6
+push constant 0
+lt
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push this 6
+push this 7
+sub
+pop this 6
+goto IF_END2
+label IF_FALSE2
+push this 6
+push this 7
+add
+pop this 6
+label IF_END2
+label IF_FALSE0
+push local 0
+push constant 50
+eq
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push this 5
+push constant 2
+call Math.divide 2
+pop this 5
+push this 6
+push constant 2
+call Math.divide 2
+pop this 6
+label IF_FALSE3
+push local 0
+push constant 131
+eq
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push this 6
+push this 7
+sub
+pop this 6
+label IF_FALSE4
+push local 0
+push constant 133
+eq
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push this 6
+push this 7
+add
+pop this 6
+label IF_FALSE5
+push local 0
+push constant 130
+eq
+if-goto IF_TRUE6
+goto IF_FALSE6
+label IF_TRUE6
+push this 5
+push this 7
+sub
+pop this 5
+label IF_FALSE6
+push local 0
+push constant 132
+eq
+if-goto IF_TRUE7
+goto IF_FALSE7
+label IF_TRUE7
+push this 5
+push this 7
+add
+pop this 5
+label IF_FALSE7
+push this 3
+push this 5
+add
+pop this 3
+push this 4
+push this 6
+add
+pop this 4
+push constant 0
+return
+function Dvd.ChangeState 0
+push argument 0
+pop pointer 0
+push argument 1
+push argument 2
+or
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push this 2
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push constant 0
+pop this 2
+goto IF_END1
+label IF_FALSE1
+push constant 0
+not
+pop this 2
+label IF_END1
+push this 2
+call Screen.setColor 1
+pop temp 0
+push pointer 0
+call Dvd.FillScreen 1
+pop temp 0
+label IF_FALSE0
+push constant 0
+return
+function Dvd.EpicFinish 0
+push argument 0
+pop pointer 0
 push constant 0
 return
