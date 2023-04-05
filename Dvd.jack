@@ -53,9 +53,10 @@ class Dvd{
         do Screen.drawLine(x+57, y+0, x+66, y+0);
 
         //задержка кадра
-        while (j<10000){
-            let j = j + 1;
-        }
+        do Sys.wait(10);
+        //while (j<10000){
+        //    let j = j + 1;
+        //}
         return;
     }
 
