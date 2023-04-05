@@ -1,0 +1,130 @@
+class Dvd{
+    field Array data;
+    constructor Dvd new(){
+        let data = Array.new(420);
+        return this;
+    }
+
+    method int mod(int dividend, int divider)
+    {
+        var int quotient;
+        let quotient = dividend / divider; 
+        return dividend - (divider * quotient);        
+    }
+
+    method void print(int x, int y){
+        //28*15
+        var int i;
+        var int j;
+        var int index;
+
+        let index = 0;
+        let i = 0;
+        let j = 0;
+        do Screen.drawLine(x+0, y+0, x+0, y+30);
+        do Screen.drawLine(x+0, y+0, x+21, y+0);
+        do Screen.drawLine(x+21, y+0, x+30, y+9);
+        do Screen.drawLine(x+30, y+9, x+30, y+21);
+        do Screen.drawLine(x+30, y+21, x+21, y+30);
+        do Screen.drawLine(x+21, y+30, x+0, y+30);
+        do Screen.drawLine(x+6, y+6, x+6, y+24);
+        do Screen.drawLine(x+6, y+6, x+15, y+6);
+        do Screen.drawLine(x+15, y+6, x+15, y+24);
+        do Screen.drawLine(x+15, y+24, x+6, y+24);
+
+        do Screen.drawLine(x+72, y+0, x+72, y+30);
+        do Screen.drawLine(x+72, y+0, x+93, y+0);
+        do Screen.drawLine(x+93, y+0, x+102, y+9);
+        do Screen.drawLine(x+102, y+9, x+102, y+21);
+        do Screen.drawLine(x+102, y+21, x+93, y+30);
+        do Screen.drawLine(x+93, y+30, x+72, y+30);
+        do Screen.drawLine(x+78, y+6, x+78, y+24);
+        do Screen.drawLine(x+78, y+6, x+87, y+6);
+        do Screen.drawLine(x+87, y+6, x+87, y+24);
+        do Screen.drawLine(x+87, y+24, x+78, y+24);
+
+        do Screen.drawLine(x+36, y+0, x+51, y+30);
+        do Screen.drawLine(x+51, y+30, x+66, y+0);
+        do Screen.drawLine(x+45, y+0, x+51, y+15);
+        do Screen.drawLine(x+51, y+15, x+57, y+0);
+        do Screen.drawLine(x+36, y+0, x+45, y+0);
+        do Screen.drawLine(x+57, y+0, x+66, y+0);
+        while (i<10){
+            while (j<1000){
+                let j = j + 1;
+            }
+            let i = i +1;
+            let j = 0;
+        }
+        return;
+    }
+
+    method void FillScreen(){
+        do Screen.drawRectangle(0,0,511,255);
+        return;
+    }
+
+    method void move(int x, int y){
+        var int img_width;
+        var int img_height;
+        var int dx;
+        var int dy;
+        var char key;
+        var boolean event1;
+        var boolean event2;
+        var boolean state;
+
+        let img_width = 102;
+        let img_height = 31;
+
+        let dx = 10;
+        let dy = -10;
+
+
+        while (~(event1 & event2)){
+            let event1 = false;
+            let event2 = false;
+            let key = Keyboard.keyPressed();
+            if (key = 49){
+                let dx = dx + 1;
+                let dy = dy + 1;
+            }
+            if (key = 50){
+                let dx = dx - 1;
+                let dy = dy - 1;
+            }
+
+            let x = x + dx;
+            let y = y + dy;
+
+            if ((((x+img_width)+dx)>511) | (x+dx < 1)){
+                let dx = (dx * (-1));
+                let event1 = true;
+            }
+            if ((((y+img_height)+dy)>255) | (y+dy < 1)){
+                let dy = (dy * (-1));
+                let event2 = true;
+            }
+
+            if (event1 | event2){
+                if (state){
+                    let state = false;
+                }
+                else{
+                    let state = true;
+                }   
+                do Screen.setColor(state);
+                do FillScreen();
+                
+            }
+            do Screen.setColor(~state);
+            do print(x, y);
+            do Screen.setColor(state);
+            do FillScreen();
+        }
+
+
+        return;
+    }
+
+}

@@ -1,0 +1,591 @@
+function Dvd.new 0
+push constant 1
+call Memory.alloc 1
+pop pointer 0
+push constant 420
+call Array.new 1
+pop this 0
+push pointer 0
+return
+function Dvd.mod 1
+push argument 0
+pop pointer 0
+push argument 1
+push argument 2
+call Math.divide 2
+pop local 0
+push argument 1
+push argument 2
+push local 0
+call Math.multiply 2
+sub
+return
+function Dvd.print 3
+push argument 0
+pop pointer 0
+push constant 0
+pop local 2
+push constant 0
+pop local 0
+push constant 0
+pop local 1
+push argument 1
+push constant 0
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 0
+add
+push argument 2
+push constant 30
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 0
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 21
+add
+push argument 2
+push constant 0
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 21
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 30
+add
+push argument 2
+push constant 9
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 30
+add
+push argument 2
+push constant 9
+add
+push argument 1
+push constant 30
+add
+push argument 2
+push constant 21
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 30
+add
+push argument 2
+push constant 21
+add
+push argument 1
+push constant 21
+add
+push argument 2
+push constant 30
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 21
+add
+push argument 2
+push constant 30
+add
+push argument 1
+push constant 0
+add
+push argument 2
+push constant 30
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 6
+add
+push argument 2
+push constant 6
+add
+push argument 1
+push constant 6
+add
+push argument 2
+push constant 24
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 6
+add
+push argument 2
+push constant 6
+add
+push argument 1
+push constant 15
+add
+push argument 2
+push constant 6
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 15
+add
+push argument 2
+push constant 6
+add
+push argument 1
+push constant 15
+add
+push argument 2
+push constant 24
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 15
+add
+push argument 2
+push constant 24
+add
+push argument 1
+push constant 6
+add
+push argument 2
+push constant 24
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 72
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 72
+add
+push argument 2
+push constant 30
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 72
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 93
+add
+push argument 2
+push constant 0
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 93
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 102
+add
+push argument 2
+push constant 9
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 102
+add
+push argument 2
+push constant 9
+add
+push argument 1
+push constant 102
+add
+push argument 2
+push constant 21
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 102
+add
+push argument 2
+push constant 21
+add
+push argument 1
+push constant 93
+add
+push argument 2
+push constant 30
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 93
+add
+push argument 2
+push constant 30
+add
+push argument 1
+push constant 72
+add
+push argument 2
+push constant 30
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 78
+add
+push argument 2
+push constant 6
+add
+push argument 1
+push constant 78
+add
+push argument 2
+push constant 24
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 78
+add
+push argument 2
+push constant 6
+add
+push argument 1
+push constant 87
+add
+push argument 2
+push constant 6
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 87
+add
+push argument 2
+push constant 6
+add
+push argument 1
+push constant 87
+add
+push argument 2
+push constant 24
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 87
+add
+push argument 2
+push constant 24
+add
+push argument 1
+push constant 78
+add
+push argument 2
+push constant 24
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 36
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 51
+add
+push argument 2
+push constant 30
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 51
+add
+push argument 2
+push constant 30
+add
+push argument 1
+push constant 66
+add
+push argument 2
+push constant 0
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 45
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 51
+add
+push argument 2
+push constant 15
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 51
+add
+push argument 2
+push constant 15
+add
+push argument 1
+push constant 57
+add
+push argument 2
+push constant 0
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 36
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 45
+add
+push argument 2
+push constant 0
+add
+call Screen.drawLine 4
+pop temp 0
+push argument 1
+push constant 57
+add
+push argument 2
+push constant 0
+add
+push argument 1
+push constant 66
+add
+push argument 2
+push constant 0
+add
+call Screen.drawLine 4
+pop temp 0
+label WHILE_EXP0
+push local 0
+push constant 10
+lt
+not
+if-goto WHILE_END0
+label WHILE_EXP1
+push local 1
+push constant 1000
+lt
+not
+if-goto WHILE_END1
+push local 1
+push constant 1
+add
+pop local 1
+goto WHILE_EXP1
+label WHILE_END1
+push local 0
+push constant 1
+add
+pop local 0
+push constant 0
+pop local 1
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return
+function Dvd.FillScreen 0
+push argument 0
+pop pointer 0
+push constant 0
+push constant 0
+push constant 511
+push constant 255
+call Screen.drawRectangle 4
+pop temp 0
+push constant 0
+return
+function Dvd.move 8
+push argument 0
+pop pointer 0
+push constant 102
+pop local 0
+push constant 31
+pop local 1
+push constant 10
+pop local 2
+push constant 10
+neg
+pop local 3
+label WHILE_EXP0
+push local 5
+push local 6
+and
+not
+not
+if-goto WHILE_END0
+push constant 0
+pop local 5
+push constant 0
+pop local 6
+call Keyboard.keyPressed 0
+pop local 4
+push local 4
+push constant 49
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push local 2
+push constant 1
+add
+pop local 2
+push local 3
+push constant 1
+add
+pop local 3
+label IF_FALSE0
+push local 4
+push constant 50
+eq
+if-goto IF_TRUE1
+goto IF_FALSE1
+label IF_TRUE1
+push local 2
+push constant 1
+sub
+pop local 2
+push local 3
+push constant 1
+sub
+pop local 3
+label IF_FALSE1
+push argument 1
+push local 2
+add
+pop argument 1
+push argument 2
+push local 3
+add
+pop argument 2
+push argument 1
+push local 0
+add
+push local 2
+add
+push constant 511
+gt
+push argument 1
+push local 2
+add
+push constant 1
+lt
+or
+if-goto IF_TRUE2
+goto IF_FALSE2
+label IF_TRUE2
+push local 2
+push constant 1
+neg
+call Math.multiply 2
+pop local 2
+push constant 0
+not
+pop local 5
+label IF_FALSE2
+push argument 2
+push local 1
+add
+push local 3
+add
+push constant 255
+gt
+push argument 2
+push local 3
+add
+push constant 1
+lt
+or
+if-goto IF_TRUE3
+goto IF_FALSE3
+label IF_TRUE3
+push local 3
+push constant 1
+neg
+call Math.multiply 2
+pop local 3
+push constant 0
+not
+pop local 6
+label IF_FALSE3
+push local 5
+push local 6
+or
+if-goto IF_TRUE4
+goto IF_FALSE4
+label IF_TRUE4
+push local 7
+if-goto IF_TRUE5
+goto IF_FALSE5
+label IF_TRUE5
+push constant 0
+pop local 7
+goto IF_END5
+label IF_FALSE5
+push constant 0
+not
+pop local 7
+label IF_END5
+push local 7
+call Screen.setColor 1
+pop temp 0
+push pointer 0
+call Dvd.FillScreen 1
+pop temp 0
+label IF_FALSE4
+push local 7
+not
+call Screen.setColor 1
+pop temp 0
+push pointer 0
+push argument 1
+push argument 2
+call Dvd.print 3
+pop temp 0
+push local 7
+call Screen.setColor 1
+pop temp 0
+push pointer 0
+call Dvd.FillScreen 1
+pop temp 0
+goto WHILE_EXP0
+label WHILE_END0
+push constant 0
+return

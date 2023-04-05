@@ -1,0 +1,10 @@
+class Main {
+    function void main() {
+        var Dvd dvd;
+
+        let dvd = dvd.new(102, 31, 1, 1);
+        //do dvd.move(160,100);
+        do dvd.move(123, 36);
+        return;
+    }
+}
